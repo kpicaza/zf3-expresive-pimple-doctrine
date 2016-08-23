@@ -25,7 +25,8 @@
         "zendframework/zend-expressive-zendrouter": "^1.0",
         "xtreamwayz/pimple-container-interop": "^1.0",
         "doctrine/orm": "^2.5",
-        "dasprid/container-interop-doctrine": "^0.2.2"
+        "dasprid/container-interop-doctrine": "^0.2.2",
+        "symfony/console": "^3.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8",
