@@ -1,0 +1,13 @@
+App\Entity\User:
+    type: entity
+    table: Users
+    id:
+        id:
+            type: bigint
+            generator:
+                strategy: IDENTITY
+    fields:
+        username:
+            length: 100
+        email:
+            length: 100

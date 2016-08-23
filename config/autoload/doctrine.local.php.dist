@@ -1,0 +1,28 @@
+<?php
+return [
+    'doctrine' => [
+        'connection' => [
+            'orm_default' => [
+                'params' => [
+                    'url' => 'mysql://username:password@localhost/database',
+                ],
+            ],
+        ],
+        'driver' => [
+            'orm_default' => [
+                'class' => \Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain::class,
+                'drivers' => [
+                    'App\Entity' => 'orm_driver',
+                ],
+            ],
+            'orm_driver' => [
+                'class' => 'Doctrine\ORM\Mapping\Driver\YamlDriver',
+                'cache' => 'array',
+                'paths' => [
+                    realpath(__DIR__ . '/../../src/App/Entity'),
+                    realpath(__DIR__ . '/../../src/Persistence/Doctrine/Mapping')
+                ],
+            ],
+        ],
+    ],
+];
