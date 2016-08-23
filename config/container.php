@@ -31,4 +31,17 @@ foreach ($config['dependencies']['invokables'] as $name => $object) {
     };
 }
 
+// Inject Invokable with dependencies, easy way.
+$container['post.user.action'] = function ($c) use ($container) {
+    return new \App\Action\PostUserAction(
+        $container->get('doctrine.entity_manager.orm_default')
+    );
+};
+
+$container['get.user.action'] = function ($c) use ($container) {
+    return new \App\Action\GetUserAction(
+        $container->get('doctrine.entity_manager.orm_default')
+    );
+};
+
 return $container;
